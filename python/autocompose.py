@@ -16,7 +16,9 @@ def start_compose(project, arguments):
 
 projects = [project for project in os.listdir(projects_path)]
 
-if sys.argv[1] not in projects:
+project = sys.argv[1]
+
+if project not in projects:
     sys.exit("Not an existing compose project")
 
 args = " ".join(sys.argv[2:])
