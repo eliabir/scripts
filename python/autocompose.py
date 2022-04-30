@@ -16,14 +16,13 @@ def start_compose(project, argument):
 
 projects = [project for project in os.listdir(projects_path)]
 
-
 if len(sys.argv[1:]) > 3:
     sys.exit("Too many arguments")
 
 if sys.argv[1] not in projects:
     sys.exit("Not an existing compose project")
 
-if  (sys.argv[2] == "up") and (sys.argv[3] == "-d"):
+if (sys.argv[2] == "up") and (sys.argv[3] == "-d"):
     argument = f'{sys.argv[2]} {sys.argv[3]}'
     start_compose(sys.argv[1], argument)
 elif (sys.argv[2] == "down") and (len(sys.argv[1:]) == 2):
